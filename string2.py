@@ -14,7 +14,7 @@ __author__ = "???"
 # Complete each of these string exercises in the same way as the
 # previous String1 excercises.
 
-# D. verbing
+# E. verbing
 # Given a string, if its length is at least 3, add 'ing' to its
 # end unless it already ends in 'ing', in which case add 'ly'
 # instead.
@@ -23,11 +23,16 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) > 3:
+        if s.endswith("ing"):
+            return s + "ly"
+        else:
+            return s + "ing"
+    else:
+        return s
 
 
-# E. not_bad
+# F. not_bad
 # Given a string, find the first occurrence of the substrings
 # 'not' and 'bad'. If the 'bad' follows the 'not', replace
 # the whole 'not'...'bad' substring with 'good'.
@@ -36,12 +41,21 @@ def verbing(s):
 #   'This dinner is not that bad!' -> 'This dinner is good!'
 
 
-def not_bad(s):
-    # your code here
-    return
+def not_bad(string):
+    not_ = string.find("not")
+    bad_ = string.find("bad")
+    if not_ < bad_:
+        new_string = string[:not_]
+        end = string.find("!")
+        if end == end >= 0:
+            return new_string + "good!"
+        else:
+            return new_string + "good"
+    else:
+        return string
 
 
-# F. front_back
+# G. front_back
 # Consider dividing a string into two halves.
 # If the length is even, the front and back halves are the same
 # length. If the length is odd, we'll say that the extra
@@ -52,8 +66,29 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    is_a_even = len(a) % 2 == 0
+    is_b_even = len(b) % 2 == 0
+    if is_a_even == True:
+        adiv = len(a)//2
+        a_front = a[:adiv]
+        a_back = a[adiv:]
+        pass
+    else:
+        adiv = len(a)//2+1
+        a_front = a[:adiv]
+        a_back = a[adiv:]
+        pass
+    if is_b_even == True:
+        bdiv = len(b)//2
+        b_front = b[:bdiv]
+        b_back = b[bdiv:]
+        pass
+    else:
+        bdiv = len(b)//2+1
+        b_front = b[:bdiv]
+        b_back = b[bdiv:]
+        pass
+    return a_front + b_front + a_back + b_back
 
 
 # Provided simple test() function used in main() to print
